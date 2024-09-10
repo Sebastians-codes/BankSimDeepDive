@@ -71,6 +71,7 @@ namespace BankSimDeepDive
         */
         public void Run()
         {
+            GetUser();
             if (!_encryption.CheckMasterPassword(_pathMaster))
                 return;
             GetSavedBalance();
