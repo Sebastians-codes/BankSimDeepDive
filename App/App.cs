@@ -32,8 +32,8 @@ namespace BankSimDeepDive
         private readonly string _newLine = Environment.NewLine;
 
         // strings för att sätta fil paths för de filer som programmet behöver.
-        private readonly string _path = "Bank.txt",
-            _pathMaster = "MPass.txt";
+        private string _path,
+            _pathMaster;
 
         // Lista av strings som är strings av alla insättningar och uttag i programmet.
         private List<string> _movements;
@@ -107,6 +107,22 @@ namespace BankSimDeepDive
                 "a" => GoodByeMessage(),
                 _ => false
             };
+        }
+
+        private void GetUser()
+        {
+            while (true)
+            {
+                Console.Write("Enter your account number 4 numbers long -> ");
+                if (int.TryParse(Console.ReadLine(), out int num) && num.ToString().Length == 4)
+                {
+                    _path = $"{num}Bank.txt";
+                    _pathMaster = $"{num}MPass.txt";
+                    break;
+                }
+                Console.Clear();
+                Console.WriteLine("Invalid account number try again.");
+            }
         }
 
         /*
