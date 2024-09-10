@@ -13,10 +13,12 @@ App app =
     );
 
 // Global try catch för att fånga buggar som jag inte har hittat ännu.
-try {
+try
+{
     app.Run();
 }
-catch (Exception ex) {
+catch (Exception ex)
+{
     Console.WriteLine("Unexpected error, The program will close.");
     logger.LogError(ex);
     Console.ReadKey();
