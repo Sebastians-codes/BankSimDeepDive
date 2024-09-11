@@ -294,7 +294,7 @@ public class App(
         return false;
     }
 
-    // Metod för att göra programmet mer lättförståeligt och användar vänligt.
+    // Metod för att göra programmet mer lättförståeligt och användarvänligt.
     private void returnToMenu()
     {
         Console.WriteLine($"{_newLine}Tryck på en tangent för att återgå till menyn.");
